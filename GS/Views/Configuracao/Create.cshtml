@@ -1,0 +1,43 @@
+﻿@model GS.ViewModels.ConfiguracaoViewModel
+
+@{
+	ViewBag.Title = "Criar Configuração";
+	Layout = "_Layout";
+}
+
+<h2>Criar Configuração</h2>
+
+<form asp-action="Create" method="post">
+	<div>
+		<label> asp-for="IdUsuario"></label>
+		<input> asp-for="IdUsuario" required />
+		<span> asp-validation-for="IdUsuario" class="text-danger"></span>
+	</div>
+	<div>
+		<label> asp-for="LimiteAlerta"></label>
+		<input /> asp-for="LimiteAlerta" required />
+		<span> asp-validation-for="LimiteAlerta" class="text-danger"></span>
+	</div>
+	<div>
+		<label> asp-for="HorarioCorteInicio"></label>
+		<input /> asp-for="HorarioCorteInicio" type="datetime-local" />
+		<span> asp-validation-for="HorarioCorteInicio" class="text-danger"></span>
+	</div>
+	<div>
+		<label> asp-for="HorarioCorteFim"></label>
+		<input /> asp-for="HorarioCorteFim" type="datetime-local" />
+		<span> asp-validation-for="HorarioCorteFim" class="text-danger"></span>
+	</div>
+	<div>
+		<label> asp-for="Preferencias"></label>
+		<input />asp-for="Preferencias" />
+		<span >asp-validation-for="Preferencias" class="text-danger"></span>
+	</div>
+	<button type="submit">Salvar</button>
+</form>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

@@ -1,0 +1,38 @@
+﻿@model GS.ViewModels.UsuarioViewModel
+
+@{
+	ViewBag.Title = "Criar Usuário";
+	Layout = "_Layout";
+}
+
+<h2>Criar Usuário</h2>
+
+<form asp-action="CadastrarUsuario" method="post">
+	<div>
+		<label asp-for="Nome"></label>
+		<input asp-for="Nome" required />
+		<span asp-validation-for="Nome" class="text-danger"></span>
+	</div>
+	<div>
+		<label asp-for="Email"></label>
+		<input asp-for="Email" required />
+		<span asp-validation-for="Email" class="text-danger"></span>
+	</div>
+	<div>
+		<label asp-for="Telefone"></label>
+		<input asp-for="Telefone" />
+		<span asp-validation-for="Telefone" class="text-danger"></span>
+	</div>
+	<div>
+		<label asp-for="Endereco"></label>
+		<input asp-for="Endereco" />
+		<span asp-validation-for="Endereco" class="text-danger"></span>
+	</div>
+	<button type="submit">Salvar</button>
+</form>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

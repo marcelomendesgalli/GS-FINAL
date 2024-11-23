@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewBag.Title - Meu Projeto</title>
+	<link rel="stylesheet" href="~/css/site.css" />
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="/">Meu Projeto</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="@Url.Action("Index", "Usuario")">Usuários</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="@Url.Action("Index", "CadastroDispositivo")">Dispositivos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="@Url.Action("Index", "Configuracao")">Configurações</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main role="main" class="container">
+		@RenderBody()
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<span class="text-muted">GS.</span>
+		</div>
+	</footer>
+
+	@RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@model GS.ViewModels.CadastroDispositivoViewModel
+
+@{
+	ViewBag.Title = "Criar Dispositivo";
+	Layout = "_Layout";
+}
+
+<h2>Criar Dispositivo</h2>
+
+<form asp-action="Create" method="post">
+	<div>
+		<label asp-for="IdUsuario"></label>
+		<input asp-for="IdUsuario" required />
+		<span asp-validation-for="IdUsuario" class="text-danger"></span>
+	</div>
+	<div>
+		<label asp-for="TipoDispositivo"></label>
+		<input asp-for="TipoDispositivo" required />
+		<span asp-validation-for="TipoDispositivo" class="text-danger"></span>
+	</div>
+	<div>
+		<label asp-for="DataInstalacao"></label>
+		<input asp-for="DataInstalacao" type="datetime-local" required />
+		<span asp-validation-for="DataInstalacao" class="text-danger"></span>
+	</div>
+	<button type="submit">Salvar</button>
+</form>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
